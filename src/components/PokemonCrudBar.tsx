@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './css/PokemonCrudBar.css';
-
+import { BASE_API_URL, FUNC_KEY } from '../constants';
 interface Props {
   onFilter: (id: string) => void;
   onAdd: (pokemon: any) => void;
@@ -33,7 +33,7 @@ const PokemonCrudBar: React.FC<Props> = ({ onFilter, onAdd, onRemove }) => {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch(`${process.env.REACT_APP_FUNC_API}/api/pokemon/add/${addName.trim()}`, {
+      const res = await fetch(`${BASE_API_URL}/api/pokemon/add/${addName.trim()}?code=${FUNC_KEY}`, {
         method: 'POST'
       });
       if (!res.ok) throw new Error('Failed to add Pokémon');
@@ -53,7 +53,7 @@ const PokemonCrudBar: React.FC<Props> = ({ onFilter, onAdd, onRemove }) => {
     setUpdateLoading(true);
     setError(null);
     try {
-      const url = `${process.env.REACT_APP_FUNC_API}/api/pokemon/update/${updateId}?statname=${encodeURIComponent(updateStat)}&statvalue=${updateValue}`;
+      const url = `${BASE_API_URL}/api/pokemon/update/${updateId}?statname=${encodeURIComponent(updateStat)}&statvalue=${updateValue}?code=${FUNC_KEY}`;
       const res = await fetch(url, { method: 'PUT' });
       if (!res.ok) throw new Error('Failed to update Pokémon stat');
       setUpdateId('');
@@ -72,7 +72,7 @@ const PokemonCrudBar: React.FC<Props> = ({ onFilter, onAdd, onRemove }) => {
     setRemoveLoading(true);
     setError(null);
     try {
-      const res = await fetch(`${process.env.REACT_APP_FUNC_API}/api/pokemon/delete/${removeId.trim()}`, {
+      const res = await fetch(`${BASE_API_URL}/api/pokemon/delete/${removeId.trim()}?code=${FUNC_KEY}`, {
         method: 'DELETE'
       });
       if (!res.ok) throw new Error('Failed to remove Pokémon');

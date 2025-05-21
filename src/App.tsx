@@ -5,6 +5,7 @@ import PokemonCard from './components/PokemonCard';
 import PokemonModal from './components/PokemonModal';
 import PokemonCrudBar from './components/PokemonCrudBar';
 import { PokemonData } from './types/PokemonData';
+import { BASE_API_URL, FUNC_KEY } from './constants';
 
 function App() {
   const [starters, setStarters] = useState<PokemonData[]>([]);
@@ -16,7 +17,7 @@ function App() {
       setLoading(true);
       try {
         const response = await fetch(
-          `${process.env.REACT_APP_FUNC_API}/api/pokemons`
+          `${BASE_API_URL}/api/pokemons?code=${FUNC_KEY}`
         );
         if (!response.ok) throw new Error(response.statusText);
         const data: PokemonData[] = await response.json();
@@ -37,7 +38,7 @@ function App() {
     setLoading(true);
     try {
       const response = await fetch(
-        `${process.env.REACT_APP_FUNC_API}/api/pokemons`
+        `${BASE_API_URL}/api/pokemons?code=${FUNC_KEY}`
       );
       if (!response.ok) throw new Error(response.statusText);
       const data: PokemonData[] = await response.json();
@@ -60,7 +61,7 @@ function App() {
   setLoading(true);
   try {
     const response = await fetch(
-      `${process.env.REACT_APP_FUNC_API}/api/pokemon/get/${id}`
+      `${BASE_API_URL}/api/pokemon/get/${id}?code=${FUNC_KEY}`
     );
     if (!response.ok) throw new Error(response.statusText);
     const data: PokemonData = await response.json();

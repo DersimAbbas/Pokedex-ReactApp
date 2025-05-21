@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './css/PokemonModal.css';
 import { PokemonData } from '../types/PokemonData';
+import {BASE_API_URL, FUNC_KEY } from '../constants';
+
 
 const typeGradients: Record<string, string> = {
   grass: 'linear-gradient(135deg, #b2fba5 60%, #d1c4e9 100%)',
@@ -52,7 +54,7 @@ const PokemonModal: React.FC<Props> = ({ pokemon, onClose }) => {
     setDescription('');
 
     // fetch your core data
-    fetch(`${process.env.REACT_APP_FUNC_API}/api/pokemon/get/${pokemon.pokemonId}`)
+    fetch(`${BASE_API_URL}/api/pokemon/get/${pokemon.pokemonId}?code=${FUNC_KEY}`)
       .then(res => {
         if (!res.ok) throw new Error('Failed to load details');
         return res.json() as Promise<Details>;
@@ -127,7 +129,7 @@ const PokemonModal: React.FC<Props> = ({ pokemon, onClose }) => {
         <button className="custom-modal-close" onClick={onClose}>×</button>
         <div className="custom-modal-body pokedex-modal-body" style={gameboyFont}>
 
-          {/* LEFT PANEL */}
+        
           <div className="modal-left pokedex-modal-left">
             <div className="poke-id">
               #{details.pokemonId.toString().padStart(3, '0')}
@@ -163,7 +165,6 @@ const PokemonModal: React.FC<Props> = ({ pokemon, onClose }) => {
             </div>
           </div>
 
-          {/* RIGHT PANEL */}
           <div className="modal-right pokedex-modal-right">
             <div className="poke-section poke-section-about" style={sectionStyle}>
               <h4>About</h4>
