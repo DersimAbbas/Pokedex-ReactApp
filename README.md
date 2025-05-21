@@ -13,7 +13,6 @@ A fun and interactive Pokédex application built with React! This app allows use
   - Update Pokémon stats (e.g., HP, Attack, etc.).
   - Remove Pokémon by ID.
 - **Dynamic Filtering**: Filter Pokémon by ID to quickly find specific entries.
-- **Responsive Design**: Works seamlessly on desktop and mobile devices.
 - **Themed UI**: Styled to match the Pokémon theme with type-based colors and gradients.
 
 ---
