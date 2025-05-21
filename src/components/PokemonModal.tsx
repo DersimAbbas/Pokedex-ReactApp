@@ -14,6 +14,10 @@ const typeGradients: Record<string, string> = {
   ice: 'linear-gradient(135deg, #bbdefb 60%, #90caf9 100%)',
   flying: 'linear-gradient(135deg, #b3e5fc 60%, #e1bee7 100%)',
   ground: 'linear-gradient(135deg, #d7ccc8 60%, #bcaaa4 100%)',
+  psychic: 'linear-gradient(135deg, #f8bbd0 60%, #e1bee7 100%)',
+  fairy: 'linear-gradient(135deg, #f8bbd0 60%, #e1bee7 100%)',
+  bug: 'linear-gradient(135deg, #dcedc8 60%, #f8bbd0 100%)',
+
 };
 
 interface Evolution {
