@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.custom-modal-bg {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 1050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-modal-content {
+  max-width: 960px;
+  max-height: 600px;
+  padding: 1.2rem;
+  box-sizing: border-box;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  position: relative;
+  font-family: 'Press Start 2P', 'VT323', monospace;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-modal-body,
+.pokedex-modal-body {
+  display: flex;
+  flex-direction: row;
+  gap: 1.2rem;
+  flex-wrap: nowrap;
+  overflow-y: auto;
+}
+
+@media (max-width: 960px) {
+  .custom-modal-content {
+    padding: 0.5rem;
+  }
+  .custom-modal-body,
+  .pokedex-modal-body {
+    flex-direction: column;
+    gap: 0.8rem;
+    max-height: 600px;
+  }
+}
+
+.poke-section,
+.poke-attributes {
+  word-break: break-word;
+  overflow-wrap: break-word;
+  font-size: 0.6rem;
+}
+
+.poke-section h4 {
+  font-size: 11px;
+  margin-bottom: 0.4em;
+  margin-top: 0;
+  font-weight: bold;
+}
+
+.custom-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #333;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.modal-left,
+.pokedex-modal-left {
+  flex: 1.1;
+  min-width: 180px;
+  max-width: 220px;
+  background: rgba(255,255,255,0.30);
+  border-radius: 18px;
+  padding: 1.2rem 0.7rem;
+  margin-right: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.poke-sprite-frame {
+  background: transparent   ;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 0.7rem;
+  margin: 0.7rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100px;
+  min-height: 100px;
+  max-width: 130px;
+  max-height: 130px;
+}
+
+.poke-id {
+  font-size: 1.2rem;
+  color: #222;
+  font-family: monospace;
+  background: transparent;
+  border-radius: 6px;
+  padding: 0.2em 0.6em;
+  display: inline-block;
+  margin-bottom: 0.5em;
+}
+
+.poke-name {
+  font-family: 'Press Start 2P', 'Segoe UI', Arial, sans-serif;
+  font-size: 17px;
+  margin: 2px;
+  word-break: break-word;
+}
+
+.poke-img {
+  max-width: 180px;
+  height: 180px;
+  margin: 1rem 0;
+  image-rendering: pixelated;
+  background: transparent;
+}
+
+.poke-types {
+  margin: 1rem 0 0.5rem 0;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.poke-type {
+  display: inline-block;
+  background: #eee;
+  border-radius: 12px;
+  padding: 0.2rem 0.8rem;
+  margin: 0 0.2rem;
+  font-size: 10px;
+  font-weight: bold;
+  text-shadow: 1px 1px 0 #bbb;
+}
+.type-grass { background: #78c850; color: #fff; }
+.type-fire { background: #f08030; color: #fff; }
+.type-water { background: #6890f0; color: #fff; }
+.type-poison { background: #a040a0; color: #fff; }
+.type-electric { background: #f8d030; color: #fff; }
+.type-ground { background: #e0c068; color: #fff; }
+.type-fighting { background: #c03028; color: #fff; }
+.type-dragon { background: #7038f8; color: #fff; }
+.type-fairy { background: #f0b6c1; color: #fff; }
+.type-bug { background: #a8b820; color: #fff; }
+.type-normal { background: #a8a878; color: #fff; }
+.type-flying { background: #a890f0; color: #fff; }
+.type-psychic { background: #f85888; color: #fff; }
+.type-rock { background: #b8a038; color: #fff; }
+.type-ghost { background: #705898; color: #fff; }
+.type-ice { background: #98d8d8; color: #fff; }
+.type-steel { background: #b8b8d0; color: #fff; }
+
+
+.poke-attributes {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  background: transparent;
+  border-radius: 8px;
+  padding: 0.5em 0.8em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+  align-items: flex-start;
+}
+
+.modal-right,
+.pokedex-modal-right {
+  flex: 2;
+  min-width: 220px;
+  max-height: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.poke-section {
+ background: rgba(255,255,255,0.30);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 0.7rem;
+}
+
+.poke-section-about {
+  margin-top: 0;
+}
+
+.poke-stats .stat-row {
+  display: flex;
+  justify-content: space-between;
+  font-family: monospace;
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+.evolution-row {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.evolution-item {
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.15s;
+  min-width: 100px;
+}
+.evolution-item:hover {
+  transform: scale(1.1);
+}
+.evolution-item img {
+  width: 84px;
+  height: 84px;
+  background: transparent;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+  border: 2px solid #ccc;
+  image-rendering: pixelated;
+}
+
+.evo-arrow {
+  font-size: 2rem;
+  color: #bbb;
+  margin: 0 0.5rem;
+  align-self: center;
+}
+
+.poke-section ul {
+  padding-left: 1.5em;
+  margin: 0.3em 0 0 0;
+}
+
+.poke-section p {
+  margin: 0.2em 0 0 0;
+  font-size: 9px;
+  line-height: 1.5;
+  white-space: pre-line;
+}
+
+.poke-stats-horizontal {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  gap: 1.2rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.stat-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 50px;
+}
+
+.stat-label {
+  font-size: 0.6rem;
+  font-weight: 400;
+  color: #b71c1c;
+  margin-bottom: 0.2em;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.stat-value {
+  font-size: 0.6rem;
+  color: #222;
+  font-family: 'Press Start 2P', 'Segoe UI', Arial, sans-serif;
+  font-weight: 300;
+  text-align: center;
+}
+
+/* Optional: color specific stats */
+.stat-attack .stat-label,
+.stat-defense .stat-label,
+.stat-hp .stat-label,
+.stat-speed .stat-label,
+.stat-special-attack .stat-label,
+.stat-special-defense .stat-label {
+  color: #d32f2f;
+}
+
+.poke-species {
+  text-align: center;
+  font-size: 13px;
+}
