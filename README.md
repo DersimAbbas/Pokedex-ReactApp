@@ -22,5 +22,6 @@ A fun and interactive Pokédex application built with React! This app allows use
 - **Frontend**: React, TypeScript, Bootstrap, CSS
 - **Serverless Backend**: Azure Functions & CosmodDB on azure.
 - **API**: PokéAPI to initially fetch pokemon and add it to DB for usage later.
+- **Docker**: Docker for containerising the application.
 
 
