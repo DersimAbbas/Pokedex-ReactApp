@@ -17,6 +17,13 @@ const typeGradients: Record<string, string> = {
   psychic: 'linear-gradient(135deg, #f8bbd0 60%, #e1bee7 100%)',
   fairy: 'linear-gradient(135deg, #f8bbd0 60%, #e1bee7 100%)',
   bug: 'linear-gradient(135deg, #dcedc8 60%, #f8bbd0 100%)',
+  poison: 'linear-gradient(135deg, #ce93d8 60%, #b2dfdb 100%)',
+  rock: 'linear-gradient(135deg, #d7ccc8 60%, #bcaaa4 100%)',
+  ghost: 'linear-gradient(135deg, #e1bee7 60%, #f8bbd0 100%)',
+  steel: 'linear-gradient(135deg, #d7ccc8 60%, #bcaaa4 100%)',
+  normal: 'linear-gradient(135deg, #e0e0e0 60%, #bdbdbd 100%)',
+  dark: 'linear-gradient(135deg, #757575 60%, #424242 100%)',
+  
 
 };
 

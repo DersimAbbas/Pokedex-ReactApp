@@ -1,3 +1,3 @@
-export const BASE_API_URL = "https://pokedex-functionsapi.azurewebsites.net";
+export const BASE_API_URL = "https://pokedexapi-v2.azurewebsites.net";
 
-export const FUNC_KEY = "YzeLr9bk6YLBumnHLblBbdnggdgzHmctS9iU4E_Zra6oAzFuZ7g8BQ==";
+export const FUNC_KEY = "Ttvy-VxI27oRj70TuEVPGScBHOYoax370bKbQZ_XvZVPAzFukLEX3w==";
